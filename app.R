@@ -1,15 +1,10 @@
 library(reactable)
-library(leaflet)
 library(tidyverse)
 library(ggplot2)
-library(shinyWidgets)
 library(lubridate)
 library(hablar)
 library(tigris)
 library(sp)
-library(rgeos)
-library(rgdal)
-library(maptools)
 library(dplyr)
 library(scales)
 library(maps)
@@ -21,6 +16,7 @@ library(tidycensus)
 library(shiny)
 library(shinydashboard)
 library(shinythemes)
+library(shinyWidgets)
 
 # Set Census API 
 key <- "30f8a6b33c7a3c3ddc67053c0d75dfc692f6081a" 
