@@ -24,6 +24,7 @@ library(dplyr)
 library(maps)
 library(ggrepel)
 library(knitr)
+library(ggcharts)
 
 # Set Census API Key : This is needed to pull ACS
 key <- "30f8a6b33c7a3c3ddc67053c0d75dfc692f6081a" 
@@ -218,3 +219,13 @@ test2<- test2 %>%
 
 census_table_output<- test2 %>%
   select(PropertyName, Median_Income, Median_Rent, Male, Female, Employed, Unemployed, Black, White, Hispanic, Native_American, Asian, Pacific_Islander, Poverty, Poverty_1.5x, Poverty_2x, No_Highschool, Highschool_Degree, Bachelors, Graduate, HealthCare_Coverage)
+
+
+
+services<- read.csv("services.csv")
+attach(services)
+
+services<- services %>%
+  select(ServiceType, Property)
+
+colnames(services) <- c("ServiceType", "PropertyName")

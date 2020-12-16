@@ -66,6 +66,11 @@ ui<- dashboardPage(
                         infoBoxOutput("schoolBox") 
                     ),
                     fluidRow(
+                        box(title = "Community Programs and Services", status = "primary", solidHeader = TRUE,
+                            collapsible = TRUE, plotOutput("services_output"), width = "100%"),
+                    ),
+                    
+                    fluidRow(
                         
                         box(title = "Population", status = "primary", solidHeader = TRUE,
                             collapsible = TRUE, plotOutput("pop_graph"), width = 50),
@@ -166,6 +171,14 @@ server<- function(input, output){
     census_data<- reactive({
         data<- census_table_output
     })
+    
+    
+    services_out<- reactive({
+      services %>%
+        filter(PropertyName %in% input$properties) %>%
+                group_by(ServiceType) %>%
+        summarize(count = n()) })
+    
     
     ############ Dashboard Boxes ########################################
     # Households 
@@ -295,6 +308,15 @@ server<- function(input, output){
             theme(plot.title= element_text(hjust= 0.5))
     })
     
+    
+    ############ Services ############ 
+    output$services_output<- renderPlot({
+        services2<- services_out()
+        
+    services2 %>%
+        bar_chart(x = ServiceType, y = count)+
+        xlab("Program Type") +
+        ylab("Residents Served")})
     
     ############ USER CREATE GRAPH #############
     output$user_create<- renderPlot({
