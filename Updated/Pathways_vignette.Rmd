@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-
+## Shiny APP Link:https://lauren-a-kohls.shinyapps.io/lkohls_Final/?_ga=2.194057197.1733218520.1607570580-1865899214.1606852322 
 ## Background 
 Across the country, non-profit organizations have dedicated themselves to developing and redfining affordable and low income housing. Such community level and larger national nonprofit housing organizations have produced aproximately 30% of all units in the social housing sector (Bratt, 2007). As more non-profit organizaitions emerge in this industry, it becomes increasingly more important for them to capatalize on the data that they have to drive both their impact and generate revenue. A study conducted by EveryAction noted that while 90% of non-profit workers surveyed indicated that their organizations collect data, only 50% were aware of how the data was shaping their orgazational operations.
 
