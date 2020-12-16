@@ -28,7 +28,7 @@ This Project is a data visualization tool geared towards service coordinators ut
 ## The Data
 
 ## Data.csv
-This shiny app requires two datasets to function appropriately. The first, labeled "Data.csv", the second, labeled "addresses.csv".
+This shiny app requires three datasets to function appropriately. The first, labeled "Data.csv", the second, labeled "addresses.csv", and the third, labeled "services.csv". 
 
 The "Data.csv" data set is a download of data from the Family Metrics system. The dummy data set in this repo mimmicking Family Metrics output. The set offers individual level dummy data for members of 4 fake affordable housing communities. It contains a variety of demographic data, including age, race, income, education and feelings of safet within the building and broader community.
 
@@ -43,6 +43,14 @@ The addresses dataset is a dataset of property names and addresses. This dataset
 ```{r, echo = FALSE}
 addresses<- read.csv("addresses.csv")
 head(addresses[,-1])
+```
+
+## services.csv 
+The services dataset is a dataset of program attendance downloaded from Family Metrics. This dataset contains individual level interaction data between service coordinators and residents.  
+
+```{r, echo = FALSE}
+services<- read.csv("services.csv")
+head(services)
 ```
 
 ## Benefits of the application
